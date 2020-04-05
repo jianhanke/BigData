@@ -1,0 +1,6 @@
+com\atguigu\ceshi\FruitDriver.class
+com\atguigu\ceshi\FruitMapper.class
+com\atguigu\ceshi2\HDFSDriver.class
+com\atguigu\ceshi2\HDFSReducer.class
+com\atguigu\ceshi2\HDFSMapper.class
+com\atguigu\ceshi\FruitReducer.class
