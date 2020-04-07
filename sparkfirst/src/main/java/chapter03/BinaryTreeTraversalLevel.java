@@ -68,7 +68,7 @@ public class BinaryTreeTraversalLevel {
     public static void main(String[] args) {
         LinkedList<Integer> inputList = new LinkedList<Integer>(Arrays.asList(new Integer[]{3,2,9,null,null,10,null,null,8,null,4,}));
         TreeNode treeNode = createBinaryTree(inputList);
-        createBinaryTree();
+
         System.out.println("层序遍历：");
         levelOrderTraversal(treeNode);
     }
