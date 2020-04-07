@@ -24,7 +24,7 @@ public class BubbleSort {
         int lastExchangeIndex=0;
         int sortBorder=array.length-1;
         for (int i = 0; i < array.length-1 ; i++) {
-            boolean **/8=true;
+            boolean isSorted=true;
             System.out.println(sortBorder);
             for (int j = 0; j < sortBorder ; j++) {
                 if(array[j] >array[j+1] ){
@@ -41,6 +41,9 @@ public class BubbleSort {
             }
         }
     }
+
+
+
     public static void main(String[] args){
         int[] array = new int[]{2,3,4,5,6,7,8,1};
         int[] arr2=new int[]{1, 2, 3, 4, 5, 6, 7, 8};
