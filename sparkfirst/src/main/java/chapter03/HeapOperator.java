@@ -7,15 +7,14 @@ public class HeapOperator {
 
     public static void upAdjust(int[] array,int childIndex) {
 
-        int temp = array[childIndex];
-        int parentIndex = (childIndex-1)/2;
-        while (childIndex > 0 && temp < array[parentIndex])
-        {
-            array[childIndex] = array[parentIndex];
-            childIndex = parentIndex;
-            parentIndex = (parentIndex-1) / 2;
+        int tmp = array[childIndex];
+        int parentIndex=(childIndex-1)/2;
+        while( childIndex >0 && tmp<array[parentIndex] ){
+            array[childIndex]=array[parentIndex];
+            childIndex=parentIndex;
+            parentIndex=(childIndex-1)/2;
         }
-        array[childIndex] = temp;
+        array[childIndex]=tmp;
     }
     public static void downAdjust(int[] array, int parentIndex, int length) {
         // temp保存父节点值，用于最后的赋值
@@ -127,8 +126,7 @@ public class HeapOperator {
 
         int[]  array = new int[] {7,1,3,10,5,2,8,9,6};
 
-        long startTime=System.currentTimeMillis();
-        buildHeap(array);
+        buildHeap2(array);
         System.out.println(Arrays.toString(array));
 
 
