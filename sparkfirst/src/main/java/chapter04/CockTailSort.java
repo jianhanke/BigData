@@ -8,7 +8,6 @@ public class CockTailSort {
     {
         int tmp=0;
         for (int i = 0; i < array.length/2 ; i++) {
-
             boolean isSorted=true;
             for (int j = 0; j < array.length-1-i ; j++) {
                 if(array[j] >array[j+1]){

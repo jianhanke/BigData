@@ -17,23 +17,18 @@ object KafkaSparkStreaming {
     val sparkConf: SparkConf = new SparkConf().setMaster("local[*]").setAppName("KafkaSparkStreaming")
     val ssc = new StreamingContext(sparkConf, Seconds(5))
 
-    //4.通过KafkaUtil创建kafkaDSteam
-    val kafkaDSteam: ReceiverInputDStream[(String, String)] = KafkaUtils.createStream(
-        ssc,
+    val kafkaDSteam=KafkaUtils.createStream(
+      ssc,
       "hadoop102:2181",
       "atguigu",
       Map("atguigu"->3)
-    )
+    );
 
-    val wordDStream:DStream[String]  = kafkaDSteam.flatMap(t=>t._2.split("") )
+
+    val wordDStream:DStream[String]  = kafkaDSteam.flatMap(t=>t._2.split(" ") )
     val mapDStream: DStream[(String,Int)] = wordDStream.map((_,1))
     val wordToSumDStream = mapDStream.reduceByKey(_+_)
     wordToSumDStream.print()
-    ssc.start()
-    ssc.awaitTermination()
-
-
-    //6.启动SparkStreaming
     ssc.start()
     ssc.awaitTermination()
   }
